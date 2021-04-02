@@ -1,8 +1,8 @@
 "use strict";
 
 function GetToken() {
-  var fc = document.getElementById("forceConsent").checked;
-  Office.context.auth.getAccessTokenAsync({enableNewHosts:1, forceConsent:fc}, function (result) {
+  var consentPrompt = document.getElementById("allowConsent").checked;
+  Office.context.auth.getAccessTokenAsync({enableNewHosts:1, allowConsentPrompt:consentPrompt}, function (result) {
     if (result.status === "succeeded") {
       Office.context.ui.messageParent(result.value);
     } else {
