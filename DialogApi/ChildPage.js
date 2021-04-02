@@ -1,6 +1,6 @@
 "use strict";
 
-function mockSubmitCredentials() {
+function GetToken() {
   var fc = document.getElementById("forceConsent").checked;
   Office.context.auth.getAccessTokenAsync({enableNewHosts:1, forceConsent:fc}, function (result) {
     if (result.status === "succeeded") {
