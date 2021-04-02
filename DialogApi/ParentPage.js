@@ -96,6 +96,17 @@ function redirect() {
     window.location.href = value;
 }
 
+function GetToken() {
+  var consentPrompt = document.getElementById("allowConsent").checked;
+  Office.context.auth.getAccessTokenAsync({enableNewHosts:1, allowConsentPrompt:consentPrompt}, function (result) {
+    if (result.status === "succeeded") {
+        showNotification(result.value);
+    } else {
+        showNotification(JSON.stringify(result));
+    }
+  });
+}
+
 Office.onReady(function (info) {
     // do something
 });
