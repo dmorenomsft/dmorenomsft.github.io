@@ -25,4 +25,14 @@
     </SourceLocation>
   </DefaultSettings>
   <Permissions>ReadWriteDocument</Permissions>
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <WebApplicationInfo>  
+      <Id>cc64aaf3-a476-4e14-ae39-971c5ec6c710</Id>
+      <Resource>api://dmorenomsft.github.io/cc64aaf3-a476-4e14-ae39-971c5ec6c710</Resource>  
+      <Scopes>  
+        <Scope>Mail.Read</Scope>
+        <Scope>profile</Scope>
+      </Scopes>  
+    </WebApplicationInfo> 
+  </VersionOverrides>
 </OfficeApp>

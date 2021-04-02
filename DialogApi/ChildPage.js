@@ -1,8 +1,14 @@
 "use strict";
 
 function mockSubmitCredentials() {
-  var token = "SecretToken";
-  Office.context.ui.messageParent(token);
+  var fc = document.getElementById("forceConsent").checked;
+  Office.context.auth.getAccessTokenAsync({enableNewHosts:1, forceConsent:fc}, function (result) {
+    if (result.status === "succeeded") {
+      Office.context.ui.messageParent(result.value);
+    } else {
+      Office.context.ui.messageParent(JSON.stringify(result));
+    }
+  });
 }
 
 function messageParent() {

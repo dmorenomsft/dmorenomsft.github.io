@@ -16,11 +16,8 @@
 	</div>
 	<div id="content-main" style="background-color:#EDEA74;">
 		<div class="padding">
-			<input id="MockUsername" type="text" placeholder="Mock Username" style="width:200px;" />
-			<p></p>
-			<input id="MockPassword" type="text" placeholder="Mock Password" style="width:200px;" />
-			<p></p>
-			<button id="mockCredentials" onclick="mockSubmitCredentials()">Mock Login</button>
+			<input type="checkbox" id="forceConsent">Force Consent?
+			<button id="mockCredentials" onclick="GetToken()">Send SSO Token</button>
 			<p></p>
 			<div>------------------------------------------------------------------------</div>
 			<p></p>
