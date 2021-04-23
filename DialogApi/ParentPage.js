@@ -2,6 +2,7 @@
 
 var _dialog;
 var _childPageUrl = "https://dmorenomsft.github.io/DialogApi/ChildPage.html";
+var _autoMessageChild = false;
 
 function getCurentSource() {
     var source;
@@ -81,6 +82,19 @@ function messageChild(message) {
     }
 
     _dialog.messageChild(value);
+}
+
+function autoMessageChild() {
+    messageChild();
+
+    if (_autoMessageChild) {
+        setTimeout(autoMessageChild, 5000);
+    }
+}
+
+function toggleAutoMessageChild() {
+    _autoMessageChild = !_autoMessageChild;
+    autoMessageChild();
 }
 
 function closeDialog() {
