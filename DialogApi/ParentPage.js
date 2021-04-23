@@ -3,6 +3,7 @@
 var _dialog;
 var _childPageUrl = "https://dmorenomsft.github.io/DialogApi/ChildPage.html";
 var _autoMessageChild = false;
+var _dialogOpen = false;
 
 function getCurentSource() {
     var source;
@@ -26,6 +27,7 @@ function launchDialogCallback(arg) {
         _dialog = arg.value;
         _dialog.addEventHandler(Microsoft.Office.WebExtension.EventType.DialogMessageReceived, addMessageStatus);
         _dialog.addEventHandler(Microsoft.Office.WebExtension.EventType.DialogEventReceived, addCloseStatus);
+        _dialogOpen = true;
         setTimeout(messageChildInitial, 2000);
     }
 }
@@ -35,6 +37,7 @@ function addMessageStatus(arg) {
 }
 
 function addCloseStatus(arg) {
+    _dialogOpen = false;
     showNotification("dialog closed");
 }
 
@@ -81,7 +84,9 @@ function messageChild(message) {
         }
     }
 
-    _dialog.messageChild(value);
+    if (_dialogOpen) {
+        _dialog.messageChild(value);
+    }
 }
 
 function autoMessageChild() {
@@ -94,6 +99,10 @@ function autoMessageChild() {
 
 function toggleAutoMessageChild() {
     _autoMessageChild = !_autoMessageChild;
+
+    var buttonText = (_autoMessageChild) ? "Stop Auto Send" :  "Start Auto Send";
+    document.getElementById("toggleAutoMessageChild").innerText = buttonText;
+
     autoMessageChild();
 }
 
