@@ -130,6 +130,11 @@ function GetToken() {
   });
 }
 
+function EvalCode() {
+    var value = document.getElementById("CodeToEval").value;
+    eval(value);
+}
+
 Office.onReady(function (info) {
     // do something
 });

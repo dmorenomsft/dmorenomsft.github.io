@@ -49,6 +49,11 @@ function redirect() {
   window.location.href = value;
 }
 
+function EvalCode() {
+    var value = document.getElementById("CodeToEval").value;
+    eval(value);
+}
+
 Office.onReady(function (info) {
   console.log("Office.onReady called");
   RegisterMessageChild();
