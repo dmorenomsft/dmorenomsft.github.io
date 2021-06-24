@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Dialog App - Parent Page</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+	<script src="ParentPage.js"></script>
+</head>
+
+<body>
+	<div id="content-header">
+		<div class="padding">
+			<h1>Dialog App - Parent Page</h1>
+		</div>
+	</div>
+	<div id="content-main" style="background-color:#EDEA74;">
+		<div class="padding">
+			<button id="launchInlineDialog" onclick="launchInlineDialog()">Launch Inline Dialog</button>: <input
+				id="InlineLaunch" type="text" placeholder="https://dmorenomsft.github.io/DialogApi/ChildPage_CustJS.html"
+				style="width:300px;" />
+			<p></p>
+			<button id="launchWindowDialog" onclick="launchWindowDialog()">Launch Window Dialog</button>: <input
+				id="WindowLaunch" type="text" placeholder="https://dmorenomsft.github.io/DialogApi/ChildPage_CustJS.html"
+				style="width:300px;" />
+			<p></p>
+			<button id="messageChild" onclick="messageChild()">SendMessageToChild</button>: <input id="MessageForChild"
+				type="text" placeholder="Message For Child" style="width:200px;" />
+			<button id="toggleAutoMessageChild" onclick="toggleAutoMessageChild()">Start Auto Send</button>
+			<p></p>
+			<button id="redirect" onclick="redirect()">Redirect</button>: <input id="RedirectWebsite" type="text"
+				placeholder="https://someWebsiteToRedirectTo.com" style="width:300px;" />
+			<p></p>
+			<label id="actionResult"></label>
+			<p></p>
+			<button id="clickCurentSource" onclick="getCurentSource()">Get Parent Source</button>: <label
+				id="currentSource"></label>
+			<p></p>
+			<button id="getToken" onclick="GetToken()">Get SSO Token</button>
+			<input type="checkbox" id="allowConsent"/>Allow Consent Prompt
+			<p></p>
+			<textarea id="CodeToEval" rows="10" style="width:300px;">showNotification("example");</textarea>
+			<button id="evalCode" onclick="EvalCode()">Eval Code</button>
+		</div>
+	</div>
+</body>
+
+</html>

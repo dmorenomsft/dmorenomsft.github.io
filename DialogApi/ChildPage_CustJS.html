@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Dialog App - Child Page</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=9" />
+	<script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+	<script src="ChildPage.js"></script>
+</head>
+
+<body>
+	<div id="content-header">
+		<div class="padding">
+			<h1>Dialog App - Child Page</h1>
+		</div>
+	</div>
+	<div id="content-main" style="background-color:#EDEA74;">
+		<div class="padding">
+			<button id="getToken" onclick="GetToken()">Send SSO Token</button>
+			<input type="checkbox" id="allowConsent"/>Allow Consent Prompt
+			<p></p>
+			<div>------------------------------------------------------------------------</div>
+			<p></p>
+			<button id="messageParent" onclick="messageParent()">Message Parent</button>: <input id="MessageForParent"
+				type="text" placeholder="Message For parent" style="width:200px;" />
+			<p></p>
+			<button id="redirect" onclick="redirect()">Redirect</button>: <input id="RedirectWebsite" type="text"
+				placeholder="https://someWebsiteToRedirectToo.com" style="width:300px;" />
+			<p></p>
+			<label id="actionResult"></label>
+			<div> Source: https://dmorenomsft.github.io/DialogApi/ChildPage_CustJS.html </div>
+			<p></p>
+			<textarea id="CodeToEval" rows="10" style="width:300px;">showNotification("example");</textarea>
+			<button id="evalCode" onclick="EvalCode()">Eval Code</button>
+		</div>
+	</div>
+</body>
+
+</html>
